@@ -1,0 +1,271 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#dfe6d8;
+    color:#444;
+    overflow-x:hidden;
+    font-family:'Cormorant Garamond', serif;
+}
+
+.opening-screen{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#dfe6d8;
+}
+
+.envelope{
+    width:360px;
+    height:250px;
+    position:relative;
+}
+
+.flap{
+    position:absolute;
+    width:100%;
+    height:160px;
+    background:#d4dccf;
+    clip-path:polygon(0 0,100% 0,50% 100%);
+    transform-origin:top;
+    z-index:5;
+    transition:1.5s;
+}
+
+.letter{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:220px;
+    background:white;
+    border-radius:8px;
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+    transition:1.5s;
+    overflow:hidden;
+}
+
+.letter-content{
+    text-align:center;
+    padding:35px;
+}
+
+.small-text{
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-size:12px;
+}
+
+h1{
+    font-size:4rem;
+    font-family:'Pinyon Script', cursive;
+    margin:20px 0;
+}
+
+h1 span{
+    color:#8b947e;
+}
+
+.invitation-text{
+    font-size:1.1rem;
+}
+
+#openInvite{
+    margin-top:20px;
+    border:none;
+    background:#8b947e;
+    color:white;
+    padding:12px 30px;
+    cursor:pointer;
+    border-radius:30px;
+}
+
+.open .flap{
+    transform:rotateX(180deg);
+}
+
+.open .letter{
+    transform:translateY(-170px);
+}
+
+#invitation{
+    opacity:0;
+    display:none;
+}
+
+.hero{
+    height:100vh;
+    position:relative;
+}
+
+.hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.35);
+}
+
+.hero-content{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+.hero-content h2{
+    font-size:6rem;
+    font-family:'Pinyon Script', cursive;
+}
+
+.hero-content p{
+    font-size:1.5rem;
+}
+
+.hero-content span{
+    letter-spacing:5px;
+}
+
+.details,
+.countdown,
+.rsvp,
+.venue{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.details h3,
+.venue h3,
+.countdown h3,
+.rsvp h3{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.date{
+    font-size:1.5rem;
+    margin-bottom:15px;
+}
+
+.map-btn{
+    display:inline-block;
+    margin-top:25px;
+    text-decoration:none;
+    color:white;
+    background:#8b947e;
+    padding:14px 35px;
+    border-radius:30px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+.gallery img{
+    width:100%;
+    height:700px;
+    object-fit:cover;
+}
+
+.venue img{
+    width:90%;
+    max-width:1000px;
+    border-radius:20px;
+}
+
+#timer{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+#timer div{
+    background:white;
+    padding:20px;
+    min-width:120px;
+    border-radius:15px;
+}
+
+#timer span{
+    font-size:3rem;
+}
+
+.rsvp-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.attend,
+.decline{
+    text-decoration:none;
+    padding:15px 40px;
+    border-radius:40px;
+}
+
+.attend{
+    background:#8b947e;
+    color:white;
+}
+
+.decline{
+    border:1px solid #8b947e;
+    color:#8b947e;
+}
+
+.phone{
+    margin-top:30px;
+}
+
+footer{
+    padding:100px 20px;
+    text-align:center;
+}
+
+footer h2{
+    font-size:4rem;
+    font-family:'Pinyon Script', cursive;
+}
+
+.fade-up{
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+    .hero-content h2{
+        font-size:4rem;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .gallery img{
+        height:450px;
+    }
+}
